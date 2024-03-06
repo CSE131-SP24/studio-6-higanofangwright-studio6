@@ -34,7 +34,8 @@ public class RecursiveMethods {
 	public static int gcd(int p, int q) {
 		
 			// FIXME compute the gcd of p and q using recursion
-			int n = q;
+			
+			int n = Math.min(p, q);
 			return gcdHelper(p, q, n);
 		
 	}
@@ -43,7 +44,7 @@ public class RecursiveMethods {
 		if(p % n == 0 && q % n == 0)
 			return n;
 		else {
-			return gcd(p, q, n-1);
+			return gcdHelper(p, q, n-1);
 		}
 	}
 

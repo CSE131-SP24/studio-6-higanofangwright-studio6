@@ -35,16 +35,15 @@ public class RecursiveMethods {
 		
 			// FIXME compute the gcd of p and q using recursion
 			
-			int n = Math.min(p, q);
-			return gcdHelper(p, q, n);
-		
+			int n = Math.min(p, q);			// n equals the smaller number between p or q
+			return gcdHelper(p, q, n);	
 	}
 	
 	public static int gcdHelper(int p, int q, int n) {
-		if(p % n == 0 && q % n == 0)
+		if(p % n == 0 && q % n == 0)		// return value of n if both p and q divide n evenly
 			return n;
 		else {
-			return gcdHelper(p, q, n-1);
+			return gcdHelper(p, q, n-1);	// otherwise, run the helper method again with n-1
 		}
 	}
 
